@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DSC 190 Final Demo
+        </title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.0/build/pure-min.css">
+        <link href="style.css" type="text/css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="bg">
+            <button onclick="location.href='{% url 'script' %}'">Excecute Script</button> <br><br>
+            {% if data %}
+            {{data}}
+            {% endif %}
+            <section>
+                <div>
+                    <form class="pure-form" action="/external" method="post">                    
+                        {%}
+                        <label>Gold Difference (k) </label><input value="0" type="number" name="goldDiff""><br><br>
+                        <label>Game Duration (mins) </label><input value="0" type="number" name="gameDuration""><br><br>
+                        
+                        <label>firstBlood</label>
+                        <select name="firstBlood"">
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                        <br><br>
+                        <label>firstTower</label>
+                        <select name="firstTower"">
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                        <br><br>
+                        <label>firstBaron</label>
+                        <select name="firstBaron"">
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                        <br><br>
+                        <label>firstDragon</label>
+                        <select name="firstTower"">
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                        <br><br>
+                        <label>firstRiftHerald</label>
+                        <select name="firstRiftHerald"">
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+    
+                        <br>
+                        <br>
+                        Blue team has <output name="output"></output> % chance to win the game.
+                    </form>
+                </div>
+            </section>
+        </div>
+       
+        
+        <script src="main.js"></script>
+    </body>
+</html>
